@@ -71,11 +71,7 @@ continuación, se mostrará un listado de los días o horas que estará libre la
 <li>Aplicación de diseño y estilo mediante bootstrap, así como diseño de logo y otros detalles.</li>
 </ul>
 <blockquote>
-<p>Nota: Se utilizará Django 1.11 (LTS), Python 3.5.4 y como base de datos SQlite3.</p>
-</blockquote>
-<h1 id="flujo-de-la-aplicación">Flujo de la aplicación</h1>
-<p>Se puede apreciar en el diagrama en forma reducida el flujo de la aplicación que puede seguir un usuario entre las distintas páginas de la misma. Por legibilidad, no se ha incluido una unión a ‘Cerrar sesión’. Pero se da por entendido que el usuario puede cerrar en cualquier momento la sesión. Es posible distinguir claramente las dos partes de la aplicación: la parte del conferencista y la parte del creador de salas.</p>
-<blockquote>
-<p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
+<p>Nota: Se utilizará Django 1.11 (LTS), Python 3.5.4 y como base de datos SQlite3.<br>
+Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
 </blockquote>
 

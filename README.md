@@ -1,6 +1,6 @@
 # Django-Hall4Conference
 
-This Django Web Application is this moment a personal project to practice and apply the knowledge of this Python web framework.
+This Django Web Application is at this moment a personal project to practice and apply the knowledge of this Python web framework.
 
 ## Initial application requirement
 
@@ -14,3 +14,5 @@ The application consists of two clearly differentiated part. One for clients loo
 *  Improve my technical English for documentation. 
 
 _Feel free to participate in the project if you share any of these objectives._
+
+Follow the development of this and another of my projects in [Trello.com/EspiFreelancer](https://trello.com/espifreelancer).

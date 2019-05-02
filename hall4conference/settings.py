@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# Django application
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,7 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'appHall4Conference',
+]
+
+# Added application
+INSTALLED_APPS +=[
+    'appHall.apps.ApphallConfig',
     'django_extensions',
 ]
 

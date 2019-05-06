@@ -1,4 +1,4 @@
-"""hall4conference URL Configuration
+"""appHall URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -14,23 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from django.contrib import admin
-from django.conf.urls import include
-
-# Use to serve static files during development (only)
-from django.conf import settings
-from django.conf.urls.static import static
-
+from . import views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^$', views.index, name='index'),
+    url(r'^user/$', views.user, name='user'),
 ]
-
-# Includes appHall URLconf 
-urlpatterns += [
-	url(r'', include('appHall.urls')),
-]
-
-
-# Use static() to add url mapping to serve static files during development (only)
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

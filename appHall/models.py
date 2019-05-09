@@ -28,7 +28,16 @@ class Hall(models.Model):
 	    return self.name
 
 
-class BaseUser(models.Model):
+# class BaseUser(models.Model):
+# 	email = models.EmailField(max_length=100)
+# 	password = models.CharField(max_length=100, help_text='Please, enter minimum 8 characters')
+# 	first_name = models.CharField(max_length=100)
+# 	last_name = models.CharField(max_length=100)
+# 	state = models.CharField(max_length=100)
+# 	country = models.CharField(max_length=100)
+
+
+class User(models.Model):
 	email = models.EmailField(max_length=100)
 	password = models.CharField(max_length=100, help_text='Please, enter minimum 8 characters')
 	first_name = models.CharField(max_length=100)
@@ -37,17 +46,18 @@ class BaseUser(models.Model):
 	country = models.CharField(max_length=100)
 
 
-class User(BaseUser):
-	def __str__(self):
-		return '%s, %s' (self.last_name, self.first_name)
+# class User(BaseUser):
+# 	def __str__(self):
+# 		return '%s, %s' (self.last_name, self.first_name)
 
 
-class Owner(BaseUser):
+class Owner(models.Model):
+	user_count = models.ForeignKey('User', on_delete=models.CASCADE)
 	is_owner = models.BooleanField()
-	name_company = models.CharField(max_length=100, help_text='Your company name, optional')
+	name_company = models.CharField(max_length=100, null=True, blank=True, help_text='Your company name, optional')
 
 	def __str__(self):
-		return '%s, %s' (self.last_name, self.first_name)
+		return '%s, %s' (self.user_count)
 
 
 class Event(models.Model):

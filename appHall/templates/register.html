@@ -6,6 +6,13 @@
 	<h3>Please to use the system create a account.</h3>	
 	<p>Enter your personal info here.</p>
 
+	<form action ="{% url 'appHall:user' %}" method="POST" class="post-form">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit" class="save btn btn-default">Save</button>
+	<form>
+
+
 	<p>In case your is a owner please check it.</p>
 
 {% endblock %}

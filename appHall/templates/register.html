@@ -9,10 +9,12 @@
 	<form action ="{% url 'appHall:user' %}" method="POST" class="post-form">
 		{% csrf_token %}
 		{{ form.as_p }}
+		<br><hr><br>
+		<p>In case your is a owner please check it.</p>
+		{{ sub_form.as_p }}
 		<button type="submit" class="save btn btn-default">Save</button>
 	<form>
 
 
-	<p>In case your is a owner please check it.</p>
 
 {% endblock %}

@@ -45,6 +45,8 @@ class User(models.Model):
 	state = models.CharField(max_length=100)
 	country = models.CharField(max_length=100)
 
+	def __str__(self):
+		return '%s, %s' % (self.last_name, self.first_name)
 
 # class User(BaseUser):
 # 	def __str__(self):
@@ -57,7 +59,7 @@ class Owner(models.Model):
 	name_company = models.CharField(max_length=100, null=True, blank=True, help_text='Your company name, optional')
 
 	def __str__(self):
-		return '%s, %s' (self.user_count)
+		return '%s, %s' % (self.user_count.last_name, self.user_count.first_name)
 
 
 class Event(models.Model):

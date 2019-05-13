@@ -16,18 +16,26 @@ def user(request):
 	""" Create a new user or owner.	"""
 	if request.method == 'POST':
 		form = UserRegisterForm(request.POST)
-		sub_form = isOwnerForm(request.POST)
 
-		if form.is_valid() and sub_form.is_valid():
+		if form.is_valid():
 
-			# Prepare the User model.
-			new_user = form.save(commit=False)
+			# Save User model.
+			new_user = form.save()
 
-			# Add the condition ForeignKey by saving the secondary form we setup.
-			# new_user.is_owner = sub_form.save()
+			# This check if the second form is full.
+			if sub_form.is_bound:
+				sub_form = isOwnerForm(request.POST)
 
-			# Save the main object and continue
-			new_user.save()
+				if sub_form.is_valid():
+					
+					# Prepare the Owner model.
+					new_owner = sub_form.save(commit=False)
+
+					# Add the ForeignKey to primary model.
+					new_owner.user_count_id = new_user.id
+
+					# Save the Owner model and continue.
+					new_owner.save()
 
 			return HttpResponseRedirect(reverse('appHall:index'))
 

@@ -1,7 +1,25 @@
+from __future__ import unicode_literals
+
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 
 # Create your models here.
+
+
+class User(AbstractUser):
+	"""
+	This extends django.contrib.auth
+	Model to represent generic user.
+	"""
+	state = models.CharField(max_length=100)
+	country = models.CharField(max_length=100)
+
+	# def __str__(self):
+	# 	return '%s, %s' % (self.last_name, self.first_name)
+
+	# def __str__(self):
+	# 	return '%s, %s' % (self.state, self.country)
 
 
 class Hall(models.Model):
@@ -28,29 +46,6 @@ class Hall(models.Model):
 	    return self.name
 
 
-# class BaseUser(models.Model):
-# 	email = models.EmailField(max_length=100)
-# 	password = models.CharField(max_length=100, help_text='Please, enter minimum 8 characters')
-# 	first_name = models.CharField(max_length=100)
-# 	last_name = models.CharField(max_length=100)
-# 	state = models.CharField(max_length=100)
-# 	country = models.CharField(max_length=100)
-
-
-class User(models.Model):
-	email = models.EmailField(max_length=100)
-	password = models.CharField(max_length=100, help_text='Please, enter minimum 8 characters')
-	first_name = models.CharField(max_length=100)
-	last_name = models.CharField(max_length=100)
-	state = models.CharField(max_length=100)
-	country = models.CharField(max_length=100)
-
-	def __str__(self):
-		return '%s, %s' % (self.last_name, self.first_name)
-
-# class User(BaseUser):
-# 	def __str__(self):
-# 		return '%s, %s' (self.last_name, self.first_name)
 
 
 class Owner(models.Model):

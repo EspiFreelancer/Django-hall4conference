@@ -41,7 +41,8 @@ INSTALLED_APPS = [
 
 # Added application
 INSTALLED_APPS +=[
-    'appHall.apps.ApphallConfig',
+    # 'appHall.apps.ApphallConfig',
+    'users.apps.UsersConfig',
     'django_extensions',
 ]
 
@@ -124,3 +125,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# Custom User Model
+# Using AbstractUser to extend the user
+
+AUTH_USER_MODEL = 'users.CustomUser'

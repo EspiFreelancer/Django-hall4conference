@@ -28,7 +28,7 @@ urlpatterns = [
 
 # Includes appHall URLconf 
 urlpatterns += [
-	url(r'', include('appHall.urls', namespace="appHall")),
+	# url(r'', include('appHall.urls', namespace="appHall")),
 ]
 
 # Use static() to add url mapping to serve static files during development (only)

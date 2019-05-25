@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	{% block title %}<title>Hall 4 Conference</title>{% endblock %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Bootstrap 3 -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+	<!-- Add additional CSS in static file -->
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+	<div class="container-fluid">
+
+		<div class="row">
+			<div class="col-sm-12 ">
+				{% block content %}{% endblock %}
+			</div>
+		</div>
+
+	</div>
+
+	<footer class="text-center footer-style">
+		
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12 footer-col">
+					<p>
+						@EspiFreelancer<br />
+						Search me on the web
+					</p>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<!-- Compiled js Bootstrap plugins -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

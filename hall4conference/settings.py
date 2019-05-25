@@ -58,10 +58,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'hall4conference.urls'
 
+# Updated to use a template directory at the project level.
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,7 +128,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-# Custom User Model
-# Using AbstractUser to extend the user
+# Customizing authentication whit custom User Model
 
-AUTH_USER_MODEL = 'users.CustomUser'
+AUTH_USER_MODEL = 'users.User'

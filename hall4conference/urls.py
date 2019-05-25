@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls import include
+from django.views.generic.base import TemplateView
 
 # Use to serve static files during development (only)
 from django.conf import settings
@@ -26,9 +27,12 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 ]
 
-# Includes appHall URLconf 
+# Includes App URLconf 
 urlpatterns += [
 	# url(r'', include('appHall.urls', namespace="appHall")),
+	url(r'', TemplateView.as_view(template_name='home.html'), name='home'),
+	# url(r'users/', include('users.urls')),
+	url(r'users/', include('django.contrib.auth.urls')),
 ]
 
 # Use static() to add url mapping to serve static files during development (only)

@@ -30,10 +30,12 @@ urlpatterns = [
 # Includes App URLconf 
 urlpatterns += [
 	# url(r'', include('appHall.urls', namespace="appHall")),
-	url(r'', TemplateView.as_view(template_name='home.html'), name='home'),
-	# url(r'users/', include('users.urls')),
-	url(r'users/', include('django.contrib.auth.urls')),
+	url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
+    url(r'^users/', include('django.contrib.auth.urls')),
+	url(r'^users/', include('users.urls')),
 ]
 
 # Use static() to add url mapping to serve static files during development (only)
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+if settings.DEBUG is True:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+

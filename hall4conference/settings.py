@@ -20,7 +20,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '%p3(%iaz^z$ba)k0s7xinj)06el199rm*-jy^=nkh)kmde@+x!'
+from . import foryoureyesonly
+SECRET_KEY = foryoureyesonly.KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -131,3 +132,11 @@ STATIC_URL = '/static/'
 # Customizing authentication whit custom User Model
 
 AUTH_USER_MODEL = 'users.User'
+
+LOGIN_REDIRECT_URL = 'home'
+
+LOGOUT_REDIRECT_URL = 'home'
+
+AUTHENTICATION_BACKENDS = (
+    'users.backends.EmailUsernameAuthBackend',
+    )
